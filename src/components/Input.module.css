@@ -1,0 +1,37 @@
+.inputCover{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.inputDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    width: 100%;
+}
+input{
+    color: black;
+    padding: 5px;
+    max-width: 350px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+}
+.buttonDiv{
+    margin-left: 40px;
+}
+button{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    margin: 0 5px;
+}
+svg{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+svg:hover{
+    scale: 1.01;
+}
