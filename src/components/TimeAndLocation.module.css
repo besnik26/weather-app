@@ -1,0 +1,19 @@
+.timeDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0;
+    p{
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+.locationDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0;
+    p{
+        font-size: 21px;
+    }
+}
