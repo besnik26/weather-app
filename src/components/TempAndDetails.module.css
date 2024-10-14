@@ -1,0 +1,62 @@
+.weatherDiv{
+    display: flex;
+    justify-content: center;
+}
+.weatherDiv p {
+    color: rgba(154, 252, 252, 0.9);
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+.weatherImg{
+    width: 70px;
+}
+
+.degree{
+    font-size: 32px;
+}
+.detailsDiv{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.detailsDiv .detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail p {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.detail span{
+    font-weight: 600;
+}
+
+.horizontalDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+    margin: 25px 0;
+}
+.horizontalDiv{
+    display: flex;
+    align-items: center;
+}
+.horizontalDiv p{
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.horizontalDiv span{
+    font-weight: 600;
+
+}
