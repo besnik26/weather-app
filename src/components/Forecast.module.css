@@ -1,0 +1,30 @@
+.forecastTitleMain{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 50px;
+}
+.forecastTitleMain p {
+    text-transform: uppercase;
+}
+
+hr{
+    margin: 10px 0;
+    border-color: white;
+}
+
+.coverDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.forecastDay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.forecastDay img{
+    width: 70px;
+}
+h4{
+    font-weight: 600;
+}

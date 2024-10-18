@@ -3,6 +3,7 @@ import "./App.css"
 import Input from "./components/Input"
 import TimeAndLocation from "./components/TimeAndLocation"
 import TempAndDetails from "./components/TempAndDetails"
+import Forecast from "./components/Forecast"
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
         <Input/>
         <TimeAndLocation/>
         <TempAndDetails/>
+        <Forecast/>
+        <Forecast/>
       </div>
     </div>
   )
