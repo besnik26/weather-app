@@ -48,7 +48,7 @@ export default function TempAndDetails(){
             value: "37°"
         },
         {
-            id:3,
+            id:4,
             Icon: MdKeyboardArrowDown,
             title: "Low",
             value: "7°"
