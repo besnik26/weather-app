@@ -34,7 +34,11 @@ const formatCurrent = (data) => {
         speed,
         details,
         icon : iconUrlFromCode(icon),
-        formatToLocalTime
+        formatToLocalTime,
+        dt,
+        timezone,
+        lat,
+        lon
     }
 
 }
