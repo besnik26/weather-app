@@ -1,5 +1,5 @@
 import styles from "./TopButton.module.css"
-export default function TopButtons(){
+export default function TopButtons({setQuery}){
     const cities = [
         {
             id:1,
@@ -26,7 +26,13 @@ export default function TopButtons(){
     return (
         <div className={styles.buttonCover}>
             {cities.map((city)=>(
-                <button className={styles.cityButton} key={city.id}>{city.name}</button>
+                <button 
+                    className={styles.cityButton} 
+                    key={city.id}
+                    onClick={()=>{setQuery({q:city.name})}}
+                >
+                    {city.name}
+                </button>
             ))}
 
         </div>

@@ -5,26 +5,37 @@ import { FiWind } from 'react-icons/fi'
 import { GiSunrise, GiSunset } from 'react-icons/gi'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
-export default function TempAndDetails(){
+export default function TempAndDetails({weather: {
+    details,
+    icon,
+    temp,
+    temp_min,
+    temp_max,
+    sunrise,
+    sunset,
+    speed,
+    humidity,
+    feels_like
+}}){
 
     const verticalDetails = [
         {
             id:1,
             Icon: FaThermometerEmpty,
             title: "Real feel",
-            value: "22°"
+            value: `${feels_like.toFixed()}°`
         },
         {
             id:2,
             Icon: BiSolidDropletHalf,
             title: "Humidity",
-            value: "346%"
+            value: `${humidity}%`
         },
         {
             id:3,
             Icon: FiWind,
             title: "Wind",
-            value: "11 hm/h"
+            value: `${speed} km/h`
         },
     ]
 
@@ -33,40 +44,40 @@ export default function TempAndDetails(){
             id:1,
             Icon: GiSunrise,
             title: "Sunrise",
-            value: "05:33 AM"
+            value: sunrise
         },
         {
             id:2,
             Icon: GiSunset,
             title: "Sunset",
-            value: "08:33 PM"
+            value: sunset
         },
         {
             id:3,
             Icon: MdKeyboardArrowUp,
             title: "High",
-            value: "37°"
+            value: `${temp_max.toFixed()}°`
         },
         {
             id:4,
             Icon: MdKeyboardArrowDown,
             title: "Low",
-            value: "7°"
+            value: `${temp_min.toFixed()}°`
         }
     ]
 
     return (
         <div>
             <div className={styles.weatherDiv}>
-                <p>Rain</p>
+                <p>{details}</p>
             </div>
             <div className={styles.main}>
                 <img 
-                    src="http://openweathermap.org/img/wn/01d@2x.png" 
+                    src={icon}
                     alt="weather icon" 
                     className={styles.weatherImg}
                 />
-                <p className={styles.degree}>34°</p>
+                <p className={styles.degree}>{`${temp.toFixed()}°`}</p>
                 <div  className={styles.detailsDiv}>
                     {
                         verticalDetails.map(({id, Icon, title, value})=>(

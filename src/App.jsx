@@ -8,35 +8,40 @@ import getFormattedWeatherData from "./services/weatherService"
 import { useEffect, useState } from "react"
 
 function App() {
-  const [query, setQuery] = useState({ q: "london" });
+  const [query, setQuery] = useState({ q: "prishtina" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
 
   const getWeather = async() => {
-    await getFormattedWeatherData({q: "ahmedabad"}).then((data)=>{
+    await getFormattedWeatherData({...query, units}).then((data)=>{
       setWeather(data)
     })
-    // console.log(data);
   };
 
   useEffect(() => {
     getWeather()
   }, [query,units])
 
-  getWeather();
+  const background = () => {
+    if(!weather) return "main-cold"
+    const threshold = units === "metric" ? 20 : 60;
+    if (weather.temp <= threshold) return "main-cold";
+    return "main-hot"
+
+  }
 
   return (
-    <div className="main">
+    <div className={background()}>
       <div className="container">
-        <TopButtons/>
+        <TopButtons setQuery = {setQuery}/>
         <Input/>
         {weather && (
           <>
             <TimeAndLocation weather={weather} />
             <TempAndDetails weather={weather} />
-            <Forecast/>
-            <Forecast/>
+            <Forecast title="3 hour step forecast" data={weather.hourly}/>
+            <Forecast title="Daily forecast" data={weather.daily} />
           </>
         )}
       </div>

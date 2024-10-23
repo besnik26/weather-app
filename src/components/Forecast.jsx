@@ -1,21 +1,20 @@
 import styles from "./Forecast.module.css"
 
-export default function Forecast(){
+export default function Forecast({title, data}){
 
-    const data = [1,2,3,4,5];
     return (
         <div>
             <div className={styles.forecastTitleMain}>
-                <p>3 hour step forecast</p>
+                <p>{title}</p>
             </div>
             <hr />
             <div className={styles.coverDiv}>
                 {
-                    data.map((data, index)=>(
+                    data.map((d, index)=>(
                         <div className={styles.forecastDay} key={index}>
-                            <p>Wed</p>
-                            <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="" />
-                            <h4>12°</h4>
+                            <p>{d.title}</p>
+                            <img src={d.icon} alt="" />
+                            <h4>{`${d.temp.toFixed()}°`}</h4>
                         </div>
                     ))
                 }
