@@ -16,7 +16,10 @@ export default function TempAndDetails({weather: {
     speed,
     humidity,
     feels_like
-}}){
+},
+units
+
+}){
 
     const verticalDetails = [
         {
@@ -35,7 +38,7 @@ export default function TempAndDetails({weather: {
             id:3,
             Icon: FiWind,
             title: "Wind",
-            value: `${speed} km/h`
+            value: `${speed} ${ units === 'metric' ? 'km/h' : 'm/s'}`
         },
     ]
 

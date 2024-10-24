@@ -35,11 +35,11 @@ function App() {
     <div className={background()}>
       <div className="container">
         <TopButtons setQuery = {setQuery}/>
-        <Input/>
+        <Input setQuery = {setQuery} setUnits = {setUnits}/>
         {weather && (
           <>
             <TimeAndLocation weather={weather} />
-            <TempAndDetails weather={weather} />
+            <TempAndDetails weather={weather}  units = {units}/>
             <Forecast title="3 hour step forecast" data={weather.hourly}/>
             <Forecast title="Daily forecast" data={weather.daily} />
           </>

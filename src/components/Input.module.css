@@ -27,6 +27,7 @@ button{
     background-color: transparent;
     font-size: 16px;
     margin: 0 5px;
+    cursor: pointer;
 }
 svg{
     cursor: pointer;
