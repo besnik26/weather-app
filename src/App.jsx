@@ -6,6 +6,12 @@ import TempAndDetails from "./components/TempAndDetails"
 import Forecast from "./components/Forecast"
 import getFormattedWeatherData from "./services/weatherService"
 import { useEffect, useState } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
+function capitalizeFirstLetter(string){
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function App() {
   const [query, setQuery] = useState({ q: "prishtina" });
@@ -14,7 +20,11 @@ function App() {
 
 
   const getWeather = async() => {
+    const message = query.q ? query.q : "current location";
+    toast.info(`Fetching weather data for ${capitalizeFirstLetter(message)}`)
+
     await getFormattedWeatherData({...query, units}).then((data)=>{
+      toast.success(`Fetched weather data for ${data.name}, ${data.country}`)
       setWeather(data)
     })
   };
@@ -45,6 +55,7 @@ function App() {
           </>
         )}
       </div>
+      <ToastContainer autoClose={2500} hideProgressBar={true} theme="colored" />
     </div>
   )
 }
