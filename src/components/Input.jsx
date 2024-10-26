@@ -22,14 +22,17 @@ export default function Input({setQuery, setUnits}){
     return (
         <div className={styles.inputCover}>
             <div className={styles.inputDiv}>
-                <input 
-                    value={city}
-                    onChange={(e)=>setCity(e.target.value)}
-                    type="text" 
-                    placeholder="Search by city..."
-                />
-                <BiSearch size={30} onClick={handleSearchClick}/>
-                <BiCurrentLocation size={30} onClick={handleLocationClick} />
+                <div className={styles.leftSide}>
+                    <input 
+                        value={city}
+                        onChange={(e)=>setCity(e.target.value)}
+                        type="text" 
+                        placeholder="Search by city..."
+                    />
+                    <BiSearch size={30} onClick={handleSearchClick}/>
+                    <BiCurrentLocation size={30} onClick={handleLocationClick} />
+                    
+                </div>
                 <div className={styles.buttonDiv}>
                     <button onClick={() => setUnits("metric")}>°C</button>
                     |
